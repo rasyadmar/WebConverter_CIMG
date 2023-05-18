@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import PictureView from "./views/PictureView";
 import NavBar from "./component/NavBar";
 import NotFound from "./views/NotFound";
+import LandingPage from "./views/LandingPage";
+import DocumentView from "./views/DocumentView";
 
 // import "./App.css";
 
@@ -13,9 +15,10 @@ function App() {
       <NavBar />
       <Routes>
         {/* document */}
-        {/* <Route exact path="/" element={<PictureView />} /> */}
-        <Route exact path="/:imgType" element={<PictureView />} />
-        <Route path="*" element={<NotFound />}/>
+        <Route exact path="/" element={<PictureView />} />
+        <Route exact path="/img/:imgType" element={<PictureView />} />
+        {/* <Route exact path="/doc" element={<DocumentView />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

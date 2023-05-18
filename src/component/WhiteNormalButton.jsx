@@ -4,9 +4,9 @@ import "./style/WhiteNormalButton.css";
 export default function WhiteNormalButton(prop) {
   return (
     <>
-      <button id="buttonNormal-81" className={prop.className} onClick={prop.onClick}>
+      <a id="buttonNormal-81" className={prop.className} href={prop.href} onClick={prop.onClick}>
         {prop.text}
-      </button>
+      </a>
     </>
   );
 }

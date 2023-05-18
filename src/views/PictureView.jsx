@@ -37,7 +37,7 @@ export default function PictureView() {
   const [imgTypePageDesc, setImgTypePageDesc] = useState(
     Strings.ConvPageDescPNG
   );
-
+  
   function convToPNG() {
     setIsLoading(true);
     if (urlImage.length < 1) return;
@@ -71,7 +71,7 @@ export default function PictureView() {
   }
 
   useEffect(() => {
-    if (params.imgType === States.PicConvertStatePNG) {
+    if (params.imgType === States.PicConvertStatePNG || typeof params.imgType === "undefined") {
       setdownloadBtnText(Strings.DownloadBtnPNG);
       setImgTypePageDesc(Strings.ConvPageDescPNG);
     } else if (params.imgType === States.PicConvertStateJPG) {
@@ -92,6 +92,8 @@ export default function PictureView() {
     convImgToUrl();
   }, [images]);
 
+ 
+
   useEffect(() => {}, [urlImage]);
 
   const pageRender = (
@@ -99,7 +101,7 @@ export default function PictureView() {
       <div className="d-flex flex-column align-items-center">
         {pageState === States.PicStateUpload ? (
           <>
-            <h1>{Strings.ConvPageTitle}</h1>
+            <h1>{Strings.ConvImgTitel}</h1>
             <h5 className="mt-1">{imgTypePageDesc}</h5>
             <UploadButton className="mt-4" function={onInputImage} />
           </>
@@ -119,7 +121,7 @@ export default function PictureView() {
           </>
         ) : pageState === States.PicStateDownload ? (
           <>
-            <h1>{Strings.ConvPageTitle}</h1>
+            <h1>{Strings.ConvImgTitel}</h1>
             <h5 className="mt-1">{Strings.DownloadDescText}</h5>
             <WhiteDownloadButton
               fileName={upButtonString}

@@ -22,8 +22,8 @@ export default function NavBar() {
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a className="navbar-brand">
-        <img src={logo} href="#" width="130px" height="40px" />
+      <a className="navbar-brand" href="/">
+        <img src={logo} width="130px" height="40px" />
       </a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -40,25 +40,25 @@ export default function NavBar() {
               Image
             </a>
             <div class="dropdown-menu" aria-labelledby="imageDropDown">
-              <a class="dropdown-item" href={States.PicConvertStatePNG}>
+              <a class="dropdown-item" href={"../img/"+States.PicConvertStatePNG}>
                 PNG
               </a>
-              <a class="dropdown-item" href={States.PicConvertStateJPG}>
+              <a class="dropdown-item" href={"../img/"+States.PicConvertStateJPG}>
                 JPG
               </a>
-              <a class="dropdown-item" href={States.PicConvertStateBMP}>
+              <a class="dropdown-item" href={"../img/"+States.PicConvertStateBMP}>
                 BMP
               </a>
-              <a class="dropdown-item" href={States.PicConvertStateTIFF}>
+              <a class="dropdown-item" href={"../img/"+States.PicConvertStateTIFF}>
                 TIFF
               </a>
             </div>
           </li>
-          <li class="nav-item">
+          {/* <li class="nav-item">
             <a class="nav-link" href="#">
               Document
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
